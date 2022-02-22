@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Live Coding</title>
+</head>
+<body>
+	<h1>Generatore numeri random</h1>
+	<p>Genera un numero intero random tra <input type="number" name="numStart" id="num-start"> e <input type="number" name="numEnd" id="num-end"> compresi.</p>
+
+	<button id="btn-generate">GENERA</button>
+
+	<div id="output"></div>
+
+	<script>
+		let inputNumStart = document.querySelector('#num-start');
+		let inputNumEnd = document.querySelector('#num-end');
+		let btnGenerate = document.querySelector('#btn-generate');
+		let outputArea = document.querySelector('#output');
+
+		btnGenerate.addEventListener('click', function() {
+			let numStart = parseInt(inputNumStart.value);
+			let numEnd = parseInt(inputNumEnd.value);
+
+			let randomNumber = Math.floor(Math.random() * (numEnd + 1 - numStart)) + numStart;
+
+			outputArea.innerHTML = randomNumber;
+		});
+	</script>
+</body>
+</html>
